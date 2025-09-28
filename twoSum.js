@@ -15,3 +15,21 @@ var twoSum = function(nums, target) {
 }
 
 
+//Better Approch (Two Pointer Technique)
+//T.C - O(nlogn)  sort method take O(nlogn) loop took O(n)
+//S.C - O(n)  because we use extra array
+
+var twoSum = function(nums, target) {
+
+        let arr=nums.map((num,i)=>[num,i]);
+          arr.sort((a,b)=>a[0]-b[0]);
+
+          let l=0 ; let r=arr.length-1;
+
+          while(l<r){
+            let sum=arr[l][0] + arr[r][0];
+            if(sum === target) return [arr[l][1],arr[r][1]];
+
+            sum < target ? l++:r--;
+        }  
+    }
