@@ -40,6 +40,7 @@ var twoSum = function(nums, target) {
     //T.C - O(n)  it looping over array once and searching T.C of Map O(1)
     //S.C - O(n)  because we use extra space Map
 
+var twoSum = function(nums, target) {
 
     let numsMap = new Map();
       for(let i=0; i<nums.length; i++){
@@ -50,4 +51,5 @@ var twoSum = function(nums, target) {
             numsMap.set(nums[i],i)
         }
     }
-
+    
+}
