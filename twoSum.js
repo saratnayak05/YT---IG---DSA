@@ -33,3 +33,21 @@ var twoSum = function(nums, target) {
             sum < target ? l++:r--;
         }  
     }
+
+   
+    
+//Using HashMap Approch-------------------------------------------------------
+    //T.C - O(n)  it looping over array once and searching T.C of Map O(1)
+    //S.C - O(n)  because we use extra space Map
+
+
+    let numsMap = new Map();
+      for(let i=0; i<nums.length; i++){
+        let dif = target - nums[i];
+        if(numsMap.has(dif)){
+            return [numsMap.get(dif),i];
+        }else{
+            numsMap.set(nums[i],i)
+        }
+    }
+
